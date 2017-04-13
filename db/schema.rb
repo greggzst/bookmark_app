@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413204209) do
+ActiveRecord::Schema.define(version: 20170413205547) do
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "websites", force: :cascade do |t|
     t.string "url"
