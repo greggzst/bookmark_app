@@ -1,4 +1,4 @@
 class Tag < ApplicationRecord
-  has_many :bookmarktags
-  has_many :bookmarks, through: :bookmarktags
+  has_many :bookmark_tags
+  has_many :bookmarks, through: :bookmark_tags
 end
