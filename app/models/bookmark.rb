@@ -1,4 +1,6 @@
 require 'uri'
+require 'nokogiri'
+require 'open-uri'
 
 class Bookmark < ApplicationRecord
   belongs_to :website, optional: true
@@ -7,7 +9,7 @@ class Bookmark < ApplicationRecord
   validates :url, presence: true, length: { minimum: 3 }
   validate :url_valid?
   validates :url, uniqueness: { case_sensitivity: false }
-  before_save :set_website
+  before_save :set_website, :set_title_and_description
 
   private
     def url_valid?
@@ -26,5 +28,12 @@ class Bookmark < ApplicationRecord
         website = Website.create(url: uri.host)
         self.website = website
       end
+    end
+
+    #set title and description according to title and description of the website
+    def set_title_and_description
+      website = Nokogiri::HTML(open(self.url))
+      self.title = website.css('title').text
+      self.description = website.at("meta[name='description']")['content']
     end
 end
