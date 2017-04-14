@@ -1,6 +1,7 @@
 require 'uri'
 require 'nokogiri'
 require 'open-uri'
+require 'digest'
 
 class Bookmark < ApplicationRecord
   belongs_to :website, optional: true
@@ -9,7 +10,7 @@ class Bookmark < ApplicationRecord
   validates :url, presence: true, length: { minimum: 3 }
   validate :url_valid?
   validates :url, uniqueness: { case_sensitivity: false }
-  before_save :set_website, :set_title_and_description
+  before_save :set_website, :set_title_and_description, :create_short_url
 
   private
     def url_valid?
@@ -35,5 +36,10 @@ class Bookmark < ApplicationRecord
       website = Nokogiri::HTML(open(self.url))
       self.title = website.css('title').text
       self.description = website.at("meta[name='description']")['content']
+    end
+
+    def create_short_url
+      md5 = Digest::MD5.hexdigest(self.url)
+      self.short_url = "http://bk.mk/#{md5[0,7]}"
     end
 end
