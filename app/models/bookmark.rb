@@ -11,8 +11,8 @@ class Bookmark < ApplicationRecord
   private
     def url_valid?
       uri = URI.parse(url)
-      unless uri.is_a? URI::HTTP && !uri.host.nil?
-        errors.add(:url, "Given URL is invalid")
+      unless uri.is_a?(URI::HTTP) && !uri.host.nil?
+        errors.add(:url, " is invalid")
       end
     end
 end
