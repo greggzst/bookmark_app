@@ -3,6 +3,8 @@ h1 Bookmarks
 = link_to 'New', new_bookmark_path
 
 ul.websites-list
-  - @websites.each do |website|
-    li class="website-#{website.id}"= link_to website.url, get_bookmarks_website_path(website), remote: true
+  = render @websites
+
+#infinite-scroll
+  = will_paginate    
 

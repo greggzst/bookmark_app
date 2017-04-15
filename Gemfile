@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'slim-rails'
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
+#will_paginate
+gem 'will_paginate'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

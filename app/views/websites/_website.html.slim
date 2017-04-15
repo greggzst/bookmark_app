@@ -1,3 +1,1 @@
-ul
-  - website.bookmarks.each do |bookmark|
-    li= render bookmark
+li class="website-#{website.id}"= link_to website.url, get_bookmarks_website_path(website), remote: true
