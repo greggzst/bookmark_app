@@ -35,7 +35,7 @@ class Bookmark < ApplicationRecord
     def set_title_and_description
       website = Nokogiri::HTML(open(self.url))
       self.title = website.css('title').text
-      self.description = website.at("meta[name='description']")['content']
+      self.description = website.at("meta[name='description']")['content'] unless website.at("meta[name='description']").nil?
     end
 
     def create_short_url
