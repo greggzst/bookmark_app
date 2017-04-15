@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'websites#index'
 
-  get 'websites/destroy'
+  resources :websites, only: [:index, :destroy] do
+    get :get_bookmarks, on: :member 
+  end
 
   resources :bookmarks
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

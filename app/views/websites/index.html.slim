@@ -4,6 +4,5 @@ h1 Bookmarks
 
 ul.websites-list
   - @websites.each do |website|
-    li= website.url
-    li= render website
+    li class="website-#{website.id}"= link_to website.url, get_bookmarks_website_path(website), remote: true
 
