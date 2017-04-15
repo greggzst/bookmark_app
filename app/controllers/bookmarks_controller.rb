@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   def index
+    @websites = Website.all
   end
 
   def new
