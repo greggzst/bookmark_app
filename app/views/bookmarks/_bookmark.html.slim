@@ -1,2 +1,11 @@
-= "Title: #{bookmark.title}"
+.bookmark
+  = "Title: #{bookmark.title}"
+  br
+  = "Description: #{bookmark.description}"
+  
+  p
+    |Tags: 
+    - bookmark.tags.each do |tag|
+      = tag.name + " "
+
 
