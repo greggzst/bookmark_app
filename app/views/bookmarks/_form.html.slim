@@ -8,6 +8,9 @@
 
   .form-group
     = f.label :url
-    = f.text_field :url, :class => "form-control"  
+    = f.text_field :url, class: "form-control"
   .form-group
-    = f.submit 'Save'
+    = f.label :tags
+    = text_field_tag 'user_tags', nil, class: "form-control"     
+  .form-group
+    = f.submit 'Save', class: "btn btn-primary"
