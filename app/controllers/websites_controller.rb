@@ -2,7 +2,7 @@ class WebsitesController < ApplicationController
   before_action :set_website, only: [:get_bookmarks]
   
   def index
-    @websites = Website.paginate(page: params[:page], per_page: 10)
+    @websites = Website.paginate(page: params[:page], per_page: 20)
     respond_to do |format|
       format.html
       format.js

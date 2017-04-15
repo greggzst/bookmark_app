@@ -1,0 +1,6 @@
+|$('.websites-list').append("#{j render @websites}");
+- if @websites.next_page
+  |$('.pagination').replaceWith("#{j will_paginate @websites} %>");
+- else
+  |$(window).off('scroll');
+  |$('.pagination').remove();
