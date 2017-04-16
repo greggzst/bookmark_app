@@ -13,7 +13,7 @@ class Bookmark < ApplicationRecord
   before_save :set_website, :set_title_and_description, :create_short_url
 
   def get_website_id_and_id
-    {self.website_id, self.id}
+    {self.website_id => self.id}
   end
 
   private
