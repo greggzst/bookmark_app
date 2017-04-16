@@ -1,1 +1,9 @@
-|$('.website-#{@website.id}').append("#{j render partial: "website_bookmarks", locals: {website: @website}}");
+| if($('
+= ".website-#{@website.id} #website-#{@website.id}"
+| ').length){ $('
+= "#website-#{@website.id}"
+| ').slideUp(700, function(){ $(this).remove(); }); } else{ $('
+= ".website-#{@website.id}"
+| ').append($("
+=j render partial: "website_bookmarks", locals: {website: @website}
+| ").hide().delay(100).slideDown(700)); }
