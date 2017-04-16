@@ -18,4 +18,10 @@
 
 $(document).on('turbolinks:load',function(){
 	$('.alert').fadeOut(2500);
+
+	$('body').on('click', '.bookmark-link',function(){
+		event.preventDefault();
+		var url = $(this).data("url");
+		window.open(url);
+	});
 });
