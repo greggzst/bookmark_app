@@ -4,12 +4,14 @@ require 'open-uri'
 require 'digest'
 
 class Bookmark < ApplicationRecord
+  attr_accessor :user_tags
   belongs_to :website, optional: true
   has_many :bookmark_tags, dependent: :destroy
   has_many :tags, through: :bookmark_tags
-  validates :url, presence: true, length: { minimum: 3 }
+  validates :url, presence: true, length: { minimum: 10 }
   validate :url_valid?
   validates :url, uniqueness: { case_sensitivity: false }
+  validates :user_tags, presence: true, length: { minimum: 3 }
   before_save :set_website, :set_title_and_description, :create_short_url
 
   def get_website_id_and_id
