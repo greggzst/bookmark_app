@@ -1,0 +1,5 @@
+= form_tag(websites_path, method: "get", class: "navbar-form navbar-right")
+  .form-group
+    = search_field_tag :search, params[:search], placeholder: "Search", class: "form-control"
+  .form-group
+    = submit_tag "Search", class: "btn btn-primary"    
