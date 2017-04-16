@@ -24,11 +24,11 @@ class BookmarksController < ApplicationController
 
   private
     def bookmark_params
-      params.require(:bookmark).permit(:url)
+      params.require(:bookmark).permit(:url,:user_tags)
     end
 
     def create_tags
-      params[:user_tags].split(/,\s|\s|,/).each do |tag_name|
+      params[:bookmark][:user_tags].split(/,\s|\s|,/).each do |tag_name|
         if tag = Tag.where(name: tag_name).first
           @bookmark.tags << tag
         else
