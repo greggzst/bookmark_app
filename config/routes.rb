@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     get :get_bookmarks, on: :member 
   end
 
-  resources :bookmarks
+  resources :bookmarks, except: [:show, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
