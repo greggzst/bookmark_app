@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+.bookmark{
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+h2.bookmark-title a{
+	text-decoration: none;
+}
+
+.bookmark-title{
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.bookmark-description{
+	text-align: justify;
+}
