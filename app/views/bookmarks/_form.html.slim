@@ -1,6 +1,6 @@
 = form_for @bookmark do |f|
   - if @bookmark.errors.any?
-    #error_explanation
+    #error_explanation.alert.alert-danger
       h2= "#{pluralize(@bookmark.errors.count, "error")} prohibited this bookmark from being saved:"
       ul
         - @bookmark.errors.full_messages.each do |msg|
@@ -11,7 +11,7 @@
     = f.text_field :url, class: "form-control"
   .form-group
     = f.label :tags
-    = text_field_tag 'user_tags', nil, class: "form-control"     
+    = f.text_field :user_tags, class: "form-control"     
   .form-group
     = f.submit 'Save', class: "btn btn-primary"
     = link_to "Back" ,root_path, class: "btn btn-default"
