@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-
+  before_action :set_bookmark, only: [:destroy]
   def index
     redirect_to root_url
   end
@@ -23,9 +23,22 @@ class BookmarksController < ApplicationController
 
   end
 
+  def destroy
+    @bookmark.destroy
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+
   private
     def bookmark_params
       params.require(:bookmark).permit(:url,:user_tags)
+    end
+
+    def set_bookmark
+      @bookmark = Bookmark.find(params[:id])
     end
 
     def create_tags

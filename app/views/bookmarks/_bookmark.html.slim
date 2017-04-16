@@ -1,4 +1,4 @@
-.bookmark
+div class="bookmark bookmark-#{bookmark.id}"
   = "Title: #{bookmark.title}"
   br
   = "Description: #{bookmark.description}"
@@ -7,5 +7,6 @@
     |Tags: 
     - bookmark.tags.each do |tag|
       = tag.name + " "
-
+      
+  = link_to "", bookmark_path(bookmark), method: :delete, remote: true, class: "glyphicon glyphicon-trash btn btn-danger", data: {confirm: "Are you sure you want to remove this bookmark?"}
 
