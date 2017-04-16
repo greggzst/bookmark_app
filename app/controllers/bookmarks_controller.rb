@@ -14,7 +14,8 @@ class BookmarksController < ApplicationController
     respond_to do |format|
       if @bookmark.save
         create_tags
-        format.html { redirect_to root_url, notice: 'Bookmark was successfully created.' }
+        flash[:success] = 'Bookmark was successfully created.'
+        format.html { redirect_to root_url }
       else
         format.html { render :new }
       end
