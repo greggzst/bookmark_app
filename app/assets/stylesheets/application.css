@@ -14,9 +14,17 @@
  *= require_self
  */
 
+.navbar-form .form-group{
+	padding-right: 5px;
+}
+
 .bookmark{
 	box-sizing: border-box;
-	padding: 10px;
+	margin: 5px;
+}
+
+.bookmark .col-md-6{
+	float: none;
 }
 
 h2.bookmark-title a{
