@@ -1,5 +1,9 @@
 class BookmarksController < ApplicationController
 
+  def index
+    redirect_to root_url
+  end
+
   def new
     @bookmark = Bookmark.new
   end
