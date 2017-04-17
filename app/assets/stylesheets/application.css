@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+.websites-list, .search-results{
+	margin-top: 10px;
+}
 .websites-list li a{
 	margin: 5px;
 }
