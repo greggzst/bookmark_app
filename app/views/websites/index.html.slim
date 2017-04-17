@@ -2,11 +2,11 @@ h1 Bookmarks
 
 = link_to 'New', new_bookmark_path
 
-ul.websites-list
-  = render @websites
-
 - if @results
-  = present_search_results(@results)  
+  = present_search_results(@results)
+- else
+  ul.websites-list
+    = render @websites    
 
 #infinite-scroll1
   = will_paginate    

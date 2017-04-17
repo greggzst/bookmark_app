@@ -24,4 +24,14 @@ $(document).on('turbolinks:load',function(){
 		var url = $(this).data("url");
 		window.open(url);
 	});
+
+	$('body').on('click', '.result-link', function(){
+		event.preventDefault();
+		var list = $(this).next();
+		if($(list).is(":visible")){
+			$(list).slideUp();
+		}else{
+			$(list).slideDown();
+		}
+	});
 });
