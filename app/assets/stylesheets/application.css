@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.navbar-form label{
+	display: none;
+}
+
 .navbar-form .form-group{
 	padding-right: 5px;
 }
