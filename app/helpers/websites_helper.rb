@@ -23,9 +23,9 @@ module WebsitesHelper
       end
       list += "</ul>"
       list.html_safe
-    end
-  else
-    message = "<div class='no-results'>There is no results meeting your criteria!</div>"
-    message.html_safe
+    else
+      message = "<div class='no-results'>There is no results meeting your criteria!</div>"
+      message.html_safe
+    end    
   end  
 end
