@@ -2,6 +2,10 @@ if($('<%=".website-#{@website.id} .bookmarks-list"%>').length){
 	$('<%=".website-#{@website.id} .bookmarks-list"%>').slideUp(700, function(){ 
 		$(this).remove(); 
 	}); 
-}else{ 
-	$('<%= ".website-#{@website.id}" %>').append($("<%=j render partial: "website_bookmarks", locals: {website: @website}%>").hide().delay(40).slideDown(700)); 
+}else{
+	<% if @website.bookmarks.present? %> 
+		$('<%= ".website-#{@website.id}" %>').append($("<%=j render partial: "website_bookmarks", locals: {website: @website}%>").hide().delay(20).slideDown(700));
+	<% else %>
+		alert('<%= "#{@website.url} does not have any bookmarks" %>')
+	<% end %>	 
 }
