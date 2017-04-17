@@ -27,8 +27,12 @@ a.delete-website{
 	display: none;
 }
 
-.navbar-form .form-group{
+.form-group{
 	padding-right: 5px;
+}
+
+.form-group a{
+	margin-left: 5px;
 }
 
 .bookmark{
