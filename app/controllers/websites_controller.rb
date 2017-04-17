@@ -3,6 +3,9 @@ class WebsitesController < ApplicationController
   
   def index
     @websites = Website.paginate(page: params[:page], per_page: 20)
+    if params[:search]
+      @results = Website.search(params[:search])
+    end
     respond_to do |format|
       format.html
       format.js

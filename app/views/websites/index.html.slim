@@ -5,6 +5,9 @@ h1 Bookmarks
 ul.websites-list
   = render @websites
 
-#infinite-scroll
+- if @results
+  = present_search_results(@results)  
+
+#infinite-scroll1
   = will_paginate    
 
