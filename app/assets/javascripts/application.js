@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).on('turbolinks:load',function(){
-	$('.alert .alert-success').fadeOut(2500);
+	$('.alert-success').fadeOut(2500);
 
 	$('body').on('click', '.bookmark-link',function(){
 		event.preventDefault();
