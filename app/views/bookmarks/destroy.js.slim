@@ -1,3 +1,5 @@
 |$('
 = ".bookmark-#{@bookmark.id}"
-|').fadeOut()
+|').fadeOut(function(){
+	$(this).remove();
+|});
