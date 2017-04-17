@@ -11,7 +11,7 @@ class Bookmark < ApplicationRecord
   validates :url, presence: true, length: { minimum: 10 }
   validate :url_valid?
   validates :url, uniqueness: { case_sensitivity: false }
-  #validates :user_tags, presence: true, length: { minimum: 3 }
+  validates :user_tags, presence: true, length: { minimum: 3 }
   before_save :set_website, :set_title_and_description, :create_short_url
 
   def get_website_id_and_id
