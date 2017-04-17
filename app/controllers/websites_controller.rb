@@ -2,7 +2,7 @@ class WebsitesController < ApplicationController
   before_action :set_website, only: [:get_bookmarks, :destroy]
   
   def index
-    @websites = Website.paginate(page: params[:page], per_page: 20)
+    @websites = Website.paginate(page: params[:page], per_page: 35)
     if params[:search]
       @results = Website.search(params[:search])
     end
