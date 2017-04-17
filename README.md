@@ -1,24 +1,5 @@
-# README
+# Bookmark App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://bookmark-app-greggzst.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Simple google bookmarks like app built with Rails 5, Bootstrap, jQuery and will_paginate
