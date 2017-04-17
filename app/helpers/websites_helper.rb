@@ -8,8 +8,8 @@ module WebsitesHelper
         if value.is_a?(Array)
           value.include?(b.id)
         else
-          value = b.id
-        end  
+          b.id == value
+        end
       end
       list += "<ul class='bookmarks-list'>"
       bookmarks.each do |b|
