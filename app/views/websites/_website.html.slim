@@ -1,1 +1,3 @@
-li class="website-#{website.id}"= link_to website.url, get_bookmarks_website_path(website), remote: true
+li class="website-#{website.id}"
+  = link_to website.url, get_bookmarks_website_path(website), remote: true, title: "Website #{website.url}" 
+  = link_to "", website_path(website), method: :delete, remote: true, class: "delete-website glyphicon glyphicon-trash", data: {confirm: "Are you sure you want to remove this website and all the bookmarks related to it?"}, title: "Remove website #{website.url}"

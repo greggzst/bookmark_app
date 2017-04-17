@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.websites-list li a{
+	margin: 5px;
+}
+
+a.delete-website{
+	text-decoration: none;
+	color: red;
+}
+
 .navbar-form label{
 	display: none;
 }
